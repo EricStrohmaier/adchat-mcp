@@ -1,0 +1,48 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "app.adchat/meta-ads",
+  "title": "AdChat: Meta Ads",
+  "description": "Run Facebook and Instagram ads from AI: results, campaigns, ad sets, ads and audiences.",
+  "version": "2.0.0",
+  "websiteUrl": "https://adchat.app",
+  "repository": {
+    "url": "https://github.com/EricStrohmaier/adchat-mcp",
+    "source": "github"
+  },
+  "icons": [
+    {
+      "src": "https://adchat.app/android-chrome-512x512.png",
+      "mimeType": "image/png",
+      "sizes": [
+        "512x512"
+      ]
+    },
+    {
+      "src": "https://adchat.app/android-chrome-192x192.png",
+      "mimeType": "image/png",
+      "sizes": [
+        "192x192"
+      ]
+    },
+    {
+      "src": "https://adchat.app/apple-touch-icon.png",
+      "mimeType": "image/png",
+      "sizes": [
+        "180x180"
+      ]
+    },
+    {
+      "src": "https://adchat.app/logo.svg",
+      "mimeType": "image/svg+xml",
+      "sizes": [
+        "any"
+      ]
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.adchat.app"
+    }
+  ]
+}
