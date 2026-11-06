@@ -1,4 +1,4 @@
-# AdChat: Meta Ads MCP server
+# AdChat MCP server
 
 Run Facebook and Instagram ads from your AI app. AdChat is a hosted, remote
 [Model Context Protocol](https://modelcontextprotocol.io) server for the Meta

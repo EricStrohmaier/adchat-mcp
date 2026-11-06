@@ -1,9 +1,9 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "app.adchat/meta-ads",
-  "title": "AdChat: Meta Ads",
-  "description": "Run Facebook and Instagram ads from AI: results, campaigns, ad sets, ads and audiences.",
-  "version": "2.0.0",
+  "title": "AdChat",
+  "description": "Run your ads from Claude, ChatGPT, Grok or Cursor. Facebook and Instagram ads today.",
+  "version": "2.0.1",
   "websiteUrl": "https://adchat.app",
   "repository": {
     "url": "https://github.com/EricStrohmaier/adchat-mcp",
