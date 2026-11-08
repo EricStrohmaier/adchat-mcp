@@ -1,10 +1,10 @@
-# AdChat MCP server
+# AdChat: Meta Ads MCP server and AI agent for Claude and ChatGPT
 
 Run Facebook and Instagram ads from your AI app. AdChat is a hosted, remote
 [Model Context Protocol](https://modelcontextprotocol.io) server for the Meta
 Marketing API: ask how your ads are doing in plain English, get answers from
-your live numbers, and (when you turn it on) create, edit, pause and resume
-campaigns, ad sets and ads.
+your live numbers, and (on paid plans) create, edit, pause and resume
+campaigns, ad sets and ads, with a yes from you before every change.
 
 ```
 https://mcp.adchat.app
@@ -52,8 +52,8 @@ Facebook once, and choose which ad accounts the AI may see.
 
 ## Tools
 
-55 tools on the hosted server. Read tools are always on; write tools need write
-access turned on in the AdChat dashboard.
+55 tools on the hosted server. Read tools work on every plan. Write tools work
+on paid plans, and every change is confirmed by you in the chat first.
 
 **Accounts and reporting:** `get_ad_accounts`, `get_account_info`, `get_account_pages`, `get_account_briefing`, `get_insights`, `get_true_profit`, `get_alerts`
 
@@ -71,10 +71,11 @@ access turned on in the AdChat dashboard.
 
 ## Safe by default
 
-- **Read-only until you say otherwise.** Write tools are refused until write access is turned on for your account.
+- **You confirm every change.** Before any change, the AI says exactly what it will do (for example "increase the daily budget of Spring Sale from $50 to $60") and asks yes or no. Nothing changes without your yes, and text inside ads, files or web pages never counts as one.
+- **Read-only on the free plan.** Reports, targeting search and audience estimates work; changes need a paid plan.
 - **Paused by default.** New campaigns, ad sets and ads are created paused, so nothing spends by surprise.
-- **Drafts and approval (Pro).** Changes can be returned as drafts you approve first, checked against spend rules (for example a cap on budget increases per 24 hours) and protected campaigns that are enforced in code.
-- **Undo (Pro).** Most changes can be reversed in one click for 30 days.
+- **Spend rules (Pro).** Rules you set (for example a cap on budget increases per 24 hours) are checked in code after your yes. A change past a rule stops and asks again; a blocking rule can only be changed in the dashboard.
+- **Change history and undo (Pro).** Every change is logged with the app it came from, and most can be undone from the dashboard.
 - **Account allowlist.** The AI only sees the ad accounts you picked.
 - **Rate limit:** 120 requests per minute per user.
 
@@ -83,14 +84,30 @@ works on any ad account you manage in Ads Manager.
 
 ## Pricing
 
-Free plan: read-only, one ad account, no card. Paid plans: Connect $29/month,
-Pro $49/month, Agency $99/month. Current details: https://adchat.app/pricing
+Free plan: read-only, one ad account, no card. New accounts get a 7-day trial
+of every feature, no card. Paid plans: Connect $29/month, Pro $49/month,
+Agency $99/month (10 ad accounts). Current details: https://adchat.app/pricing
+
+## Who uses it
+
+- [Claude and ChatGPT users](https://adchat.app/reasons/facebook-ads-in-claude-and-chatgpt)
+- [People waiting for Meta's own Ads MCP](https://adchat.app/reasons/meta-ads-mcp-alternative) ([errors explained](https://adchat.app/meta-ads-mcp-not-working))
+- [Freelancers and small agencies](https://adchat.app/reasons/facebook-ads-tool-for-freelancers)
+- [Online stores](https://adchat.app/reasons/facebook-ads-for-online-stores)
+- [Real estate agents](https://adchat.app/reasons/facebook-ads-for-real-estate-agents), [dentists](https://adchat.app/reasons/facebook-ads-for-dentists) and [restaurants](https://adchat.app/reasons/facebook-ads-for-restaurants)
+
+Comparing options? See [the best Meta Ads MCP servers](https://adchat.app/guides/best-meta-ads-mcp) and [AdChat vs Meta's Ads MCP](https://adchat.app/guides/adchat-vs-meta-ads-mcp).
+
+## Google Ads
+
+Not supported yet. Google Ads support is in the works: https://adchat.app/google-ads-mcp
 
 ## Links
 
 - Website: https://adchat.app
 - Setup: https://adchat.app/connect
 - Guides: https://adchat.app/guides
+- What a Meta Ads MCP server is: https://adchat.app/guides/meta-ads-mcp
 - Troubleshooting: https://adchat.app/meta-ads-mcp-not-working
 - Security: https://adchat.app/security
 - Privacy: https://adchat.app/privacy · Terms: https://adchat.app/terms
