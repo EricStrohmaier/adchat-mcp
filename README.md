@@ -170,7 +170,7 @@ Comparing options? See [the best Meta Ads MCP servers](https://adchat.app/guides
 ## Google Ads
 
 Google Ads tools (`google_…`) appear once you connect a Google Ads account to AdChat.
-Google support is rolling out: https://adchat.app/google-ads-mcp
+Google Ads is live for every account: search terms, keywords, negative keywords, budgets, campaign status and new responsive search ads (created paused). It can't create new Google campaigns yet. More: https://adchat.app/google-ads-mcp
 
 ## Links
 
