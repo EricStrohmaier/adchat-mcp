@@ -66,11 +66,11 @@ change mode (see [Safe by default](#safe-by-default)).
 
 **Meta: media:** `meta_upload_media` (`type`: image, video), `meta_media` (`action`: get_image, get_image_by_hash, get_video, video_status, compute_crops, save_image)
 
-**Meta: targeting and audiences:** `meta_search_targeting` (`kind`: interests, interest_suggestions, behaviors, demographics, locations, pages), `meta_estimate_audience`, `meta_audience` (`action`: create_website, create_lookalike, create_engagement, delete)
+**Meta: targeting and audiences:** `meta_search_targeting` (`kind`: interests, interest_suggestions, behaviors, demographics, locations, pages), `meta_estimate_audience`, `meta_audience` (`action`: create_website, create_lookalike, create_engagement), `meta_delete_audience` (permanent)
 
 **Meta: research:** `meta_ads_library` (Meta Ad Library)
 
-**Google Ads:** `google_get_accounts`, `google_list` (`level`: campaigns, ad_groups, ads, keywords, negative_keywords, search_terms), `google_get_insights`, `google_run_gaql`, `google_get_change_history`, `google_set_status`, `google_update_campaign_budget`, `google_add_keywords` (`negative: true` for negatives), `google_create_responsive_search_ad`, `google_undo_change`, `get_cross_platform_summary`
+**Google Ads:** `google_get_accounts`, `google_list` (`level`: campaigns, ad_groups, ads, keywords, negative_keywords, search_terms), `google_get_insights`, `google_run_gaql`, `google_get_change_history`, `google_set_status`, `google_update_campaign_budget`, `google_add_keywords`, `google_add_negative_keywords`, `google_create_responsive_search_ad`, `google_undo_change`, `get_cross_platform_summary`
 
 **Briefing, profit and alerts:** `get_account_briefing`, `get_true_profit`, `get_alerts`
 

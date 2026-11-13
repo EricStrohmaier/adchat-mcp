@@ -1,6 +1,6 @@
 ---
 name: safe-changes
-description: How AdChat changes get approved, applied and undone. Use before any AdChat write (meta_update, meta_create_*, meta_bulk_update, meta_duplicate, meta_audience, google_set_status, google_update_campaign_budget, google_add_keywords, google_create_responsive_search_ad), when the user asks about pending changes, approvals, autopilot or review mode, spending rules, or wants to undo or roll back something AdChat did.
+description: How AdChat changes get approved, applied and undone. Use before any AdChat write (meta_update, meta_create_*, meta_bulk_update, meta_duplicate, meta_audience, meta_delete_audience, google_set_status, google_update_campaign_budget, google_add_keywords, google_add_negative_keywords, google_create_responsive_search_ad), when the user asks about pending changes, approvals, autopilot or review mode, spending rules, or wants to undo or roll back something AdChat did.
 ---
 
 # Safe changes: approval, pending changes and undo

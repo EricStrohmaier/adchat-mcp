@@ -56,7 +56,7 @@ Retargeting = Website visitors 30d, exclude Purchasers 180d.
 ## Guardrails
 
 - Creating audiences needs no Yes on autopilot (it doesn't spend), but say what you
-  created. Deleting an audience (`action: delete`) can't be undone: always ask first.
+  created. Deleting an audience (`meta_delete_audience`) can't be undone: always ask first.
 - Name audiences by source, window and country: `Purchasers 180d`, `LAL 1% US – Purchasers 180d`.
 - New audiences take hours to fill; lookalikes can take up to a day.
 - Special ad categories (housing, credit, employment, politics) restrict targeting and

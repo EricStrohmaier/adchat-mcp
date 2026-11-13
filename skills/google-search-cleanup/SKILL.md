@@ -29,7 +29,7 @@ every week or two, this is the cheapest win in most Google Ads accounts.
    headlines.
 7. **Propose** in one list (see below). Let the user remove items.
 8. **Apply after the Yes the account's mode requires** (see `safe-changes`):
-   - Negatives: `google_add_keywords` with `negative: true`, `campaign_id`,
+   - Negatives: `google_add_negative_keywords` with `campaign_id`,
      the terms and a `match_type` (PHRASE by default; EXACT for one exact query).
    - New keywords: `google_add_keywords` with `ad_group_id` and
      `{text, match_type}` items. BROAD is refused unless the campaign uses Smart Bidding.
@@ -71,5 +71,5 @@ Est. saving ≈ $230/month
 > "Clean up the search terms in my Google Ads and add negatives for the junk."
 
 Briefing → campaigns and bidding → 30-day search terms → existing negatives → keywords
-→ proposal list → user trims → `google_add_keywords` (`negative: true`) per campaign →
+→ proposal list → user trims → `google_add_negative_keywords` per campaign →
 summary of what was added and the expected saving.

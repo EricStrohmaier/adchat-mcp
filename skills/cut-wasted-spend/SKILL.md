@@ -48,7 +48,7 @@ Not waste: anything under ~3 days old, in learning, or with too little spend to 
      `preview: true` first for several.
    - Meta budget down: `meta_update` with the new `daily_budget` in cents.
    - Google pause: `google_set_status` with `status: PAUSED`.
-   - Google negatives: `google_add_keywords` with `negative: true`.
+   - Google negatives: `google_add_negative_keywords` (`google_add_keywords` adds paid keywords).
    - Google budget down: `google_update_campaign_budget` in currency units.
 
 ## What to show the user
