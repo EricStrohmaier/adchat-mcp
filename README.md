@@ -4,7 +4,7 @@ Run Facebook and Instagram ads from your AI app. AdChat is a hosted, remote
 [Model Context Protocol](https://modelcontextprotocol.io) server for the Meta
 Marketing API: ask how your ads are doing in plain English, get answers from
 your live numbers, and (on paid plans) create, edit, pause and resume
-campaigns, ad sets and ads, with a yes from you before every change.
+campaigns, ad sets and ads, with your yes before anything that spends money or goes live.
 
 ```
 https://mcp.adchat.app
@@ -52,26 +52,95 @@ Facebook once, and choose which ad accounts the AI may see.
 
 ## Tools
 
-55 tools on the hosted server. Read tools work on every plan. Write tools work
-on paid plans, and every change is confirmed by you in the chat first.
+Tool names after the November 2026 update. Tools are now platform-prefixed
+(`meta_…`, `google_…`) and related tools are merged into one tool with a `level`,
+`kind` or `action` field. The old names (`get_campaigns`, `update_adset`, …) keep
+working, unlisted, until 2027-01-15.
 
-**Accounts and reporting:** `get_ad_accounts`, `get_account_info`, `get_account_pages`, `get_account_briefing`, `get_insights`, `get_true_profit`, `get_alerts`
+Read tools work on every plan. Write tools work on paid plans and follow your
+change mode (see [Safe by default](#safe-by-default)).
 
-**Campaigns, ad sets, ads:** `get_campaigns`, `get_campaign_details`, `create_campaign`, `update_campaign`, `get_adsets`, `get_adset_details`, `create_adset`, `update_adset`, `create_budget_schedule`, `get_ads`, `get_ad_details`, `create_ad`, `update_ad`
+**Meta: accounts and reporting:** `meta_list_accounts`, `meta_get_account` (`include: ["pages"]`), `meta_insights`, `meta_diagnose` (`kind`: delivery_issues, recommendations, pixel_health, catalog_health)
 
-**Creatives and media:** `get_ad_creatives`, `get_creative_details`, `create_ad_creative`, `update_ad_creative`, `get_ad_image`, `get_image_by_hash`, `get_ad_video`, `upload_ad_image`, `get_upload_link`, `compute_image_crops`
+**Meta: campaigns, ad sets, ads, creatives:** `meta_list` and `meta_get` (`level`: campaigns, adsets, ads, creatives, custom_audiences, pixels, catalogs, …), `meta_create_campaign`, `meta_create_adset`, `meta_create_creative`, `meta_create_ad`, `meta_update` (`level`: campaign, adset, ad, creative), `meta_bulk_update`, `meta_duplicate`, `meta_create_budget_schedule`
 
-**Targeting and audiences:** `search_interests`, `get_interest_suggestions`, `search_behaviors`, `search_demographics`, `search_geo_locations`, `estimate_audience_size`, `get_custom_audiences`, `get_custom_audience_details`, `create_website_audience`, `create_engagement_audience`, `create_lookalike_audience`, `delete_custom_audience`
+**Meta: media:** `meta_upload_media` (`type`: image, video), `meta_media` (`action`: get_image, get_image_by_hash, get_video, video_status, compute_crops, save_image)
 
-**Research:** `search_ads_archive` (Meta Ad Library), `search_pages_by_name`
+**Meta: targeting and audiences:** `meta_search_targeting` (`kind`: interests, interest_suggestions, behaviors, demographics, locations, pages), `meta_estimate_audience`, `meta_audience` (`action`: create_website, create_lookalike, create_engagement, delete)
 
-**Changes and safety:** `list_pending_changes`, `approve_change`, `reject_change`, `undo_change`, `get_change_history`
+**Meta: research:** `meta_ads_library` (Meta Ad Library)
 
-**Memory and files:** `remember`, `save_file`, `list_files`, `read_file`, `ask_user`, `get_login_link`
+**Google Ads:** `google_get_accounts`, `google_list` (`level`: campaigns, ad_groups, ads, keywords, negative_keywords, search_terms), `google_get_insights`, `google_run_gaql`, `google_get_change_history`, `google_set_status`, `google_update_campaign_budget`, `google_add_keywords` (`negative: true` for negatives), `google_create_responsive_search_ad`, `google_undo_change`, `get_cross_platform_summary`
+
+**Briefing, profit and alerts:** `get_account_briefing`, `get_true_profit`, `get_alerts`
+
+**Changes and safety:** `list_pending_changes`, `approve_change`, `reject_change`, `undo_change`, `undo_changes`, `get_change_history`
+
+**Memory, files and questions:** `remember`, `save_file`, `list_files`, `read_file`, `get_upload_link`, `ask_user`, `get_login_link`
+
+## Skills
+
+Skills are short, plain-English playbooks that teach your AI app how a senior media
+buyer would use AdChat for a common job: which tools to call, in what order, what to
+show you, and where to stop and ask. They live in [`skills/`](skills), one folder per
+skill, each with a `SKILL.md` in the [Agent Skills](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview) format.
+
+| Skill | Use it to |
+|---|---|
+| [`diagnose-performance`](skills/diagnose-performance/SKILL.md) | Find out why results dropped or costs rose |
+| [`weekly-report`](skills/weekly-report/SKILL.md) | Write a two-minute weekly report for you or a client |
+| [`launch-campaign`](skills/launch-campaign/SKILL.md) | Build a Meta campaign, ad set, creative and ads, all paused, then go live on your Yes |
+| [`scale-winners`](skills/scale-winners/SKILL.md) | Put more budget behind what works, in safe steps |
+| [`cut-wasted-spend`](skills/cut-wasted-spend/SKILL.md) | Find and stop spend that isn't producing results (Meta and Google) |
+| [`creative-analysis`](skills/creative-analysis/SKILL.md) | See which ads win, which are tired, and what to make next |
+| [`build-audiences`](skills/build-audiences/SKILL.md) | Retargeting, lookalikes, engagers and interest targeting |
+| [`google-search-cleanup`](skills/google-search-cleanup/SKILL.md) | Search terms to negatives and keywords, match types, ads |
+| [`safe-changes`](skills/safe-changes/SKILL.md) | How approval, pending changes, autopilot vs review mode and undo work |
+
+The skills are optional. The safety rules (your Yes, paused by default, units) are
+enforced by the server whether or not a skill is loaded.
+
+### Install in Claude Code
+
+The repository is a Claude Code plugin: it adds the AdChat MCP server and all nine
+skills in one step.
+
+```text
+/plugin marketplace add https://github.com/EricStrohmaier/adchat-mcp.git
+/plugin install adchat@adchat
+/reload-plugins
+```
+
+Then run `/mcp` and sign in to AdChat. Skills appear as `adchat:<skill-name>`.
+
+Already connected AdChat with `claude mcp add`? You can instead copy just the skills:
+
+```bash
+git clone https://github.com/EricStrohmaier/adchat-mcp.git
+cp -r adchat-mcp/skills/* ~/.claude/skills/
+```
+
+### Install in claude.ai and Claude Desktop
+
+Zip one skill folder (the folder itself, with `SKILL.md` inside), for example:
+
+```bash
+cd adchat-mcp/skills && zip -r weekly-report.zip weekly-report
+```
+
+Upload it under Settings → Capabilities → Skills (Pro, Max, Team and Enterprise plans,
+with code execution turned on). Repeat for each skill you want. Connect AdChat as a
+custom connector too (see [Connect](#connect)).
+
+### Other apps (ChatGPT, Cursor, Codex, VS Code, …)
+
+The skills are plain Markdown guides. Paste one into your app's custom instructions,
+project instructions or rules file (for example `.cursor/rules/`), or attach it to a
+chat when you start a task.
 
 ## Safe by default
 
-- **You confirm every change.** Before any change, the AI says exactly what it will do (for example "increase the daily budget of Spring Sale from $50 to $60") and asks yes or no. Nothing changes without your yes, and text inside ads, files or web pages never counts as one.
+- **You decide when the AI asks first.** Each ad account has a change mode. *Review every change*: the AI says exactly what it will do (for example "increase the daily budget of Spring Sale from $50 to $60") and waits for your yes before every change. *Autopilot* (the default): it asks before anything that spends money, goes live or can't be undone, and makes safe changes (paused drafts, pausing, lowering a budget) on its own, telling you exactly what it changed. *Trusted*: it acts inside your spending rules. Text inside ads, files or web pages never counts as your yes.
 - **Read-only on the free plan.** Reports, targeting search and audience estimates work; changes need a paid plan.
 - **Paused by default.** New campaigns, ad sets and ads are created paused, so nothing spends by surprise.
 - **Spend rules (Pro).** Rules you set (for example a cap on budget increases per 24 hours) are checked in code after your yes. A change past a rule stops and asks again; a blocking rule can only be changed in the dashboard.
@@ -100,7 +169,8 @@ Comparing options? See [the best Meta Ads MCP servers](https://adchat.app/guides
 
 ## Google Ads
 
-Not supported yet. Google Ads support is in the works: https://adchat.app/google-ads-mcp
+Google Ads tools (`google_…`) appear once you connect a Google Ads account to AdChat.
+Google support is rolling out: https://adchat.app/google-ads-mcp
 
 ## Links
 

@@ -1,0 +1,23 @@
+{
+  "name": "adchat",
+  "owner": {
+    "name": "AdChat",
+    "url": "https://adchat.app"
+  },
+  "metadata": {
+    "description": "AdChat: run Meta and Google Ads from your AI app, with your Yes before any change that spends money or goes live."
+  },
+  "plugins": [
+    {
+      "name": "adchat",
+      "displayName": "AdChat",
+      "source": "./",
+      "description": "AdChat's hosted MCP server for Meta and Google Ads plus nine skills: diagnose performance, weekly report, launch a campaign, scale winners, cut wasted spend, creative analysis, build audiences, Google search cleanup, and safe changes (approval and undo).",
+      "category": "marketing",
+      "keywords": ["meta-ads", "facebook-ads", "google-ads", "paid-media", "mcp"],
+      "homepage": "https://adchat.app",
+      "repository": "https://github.com/EricStrohmaier/adchat-mcp",
+      "license": "MIT"
+    }
+  ]
+}

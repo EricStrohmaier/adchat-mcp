@@ -1,0 +1,27 @@
+{
+  "name": "adchat",
+  "displayName": "AdChat",
+  "version": "0.1.0",
+  "description": "Run Meta (Facebook and Instagram) and Google Ads from Claude. Connects to AdChat's hosted MCP server with an OAuth sign-in, plus skills for diagnosing performance, weekly reports, launching campaigns, scaling winners, cutting wasted spend, creative analysis, audiences and Google search term cleanup. Every change that spends money or goes live waits for your Yes.",
+  "author": {
+    "name": "AdChat",
+    "url": "https://adchat.app"
+  },
+  "homepage": "https://adchat.app",
+  "repository": "https://github.com/EricStrohmaier/adchat-mcp",
+  "icon": "./assets/icon.png",
+  "documentationUrl": "https://github.com/EricStrohmaier/adchat-mcp#readme",
+  "supportUrl": "https://github.com/EricStrohmaier/adchat-mcp/issues",
+  "privacyPolicyUrl": "https://adchat.app/privacy",
+  "termsOfServiceUrl": "https://adchat.app/terms",
+  "license": "MIT",
+  "keywords": [
+    "meta-ads",
+    "facebook-ads",
+    "instagram-ads",
+    "google-ads",
+    "paid-media",
+    "mcp",
+    "campaign-management"
+  ]
+}
