@@ -2,8 +2,8 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "app.adchat/meta-ads",
   "title": "AdChat",
-  "description": "Run your ads from Claude, ChatGPT, Grok or Cursor. Facebook and Instagram ads today.",
-  "version": "2.0.1",
+  "description": "Run Facebook, Instagram and Google ads from Claude, ChatGPT, Grok or Cursor, in plain English.",
+  "version": "2.1.0",
   "websiteUrl": "https://adchat.app",
   "repository": {
     "url": "https://github.com/EricStrohmaier/adchat-mcp",

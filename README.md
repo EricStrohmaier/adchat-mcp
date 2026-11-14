@@ -1,8 +1,10 @@
-# AdChat: Meta Ads MCP server and AI agent for Claude and ChatGPT
+# AdChat: Meta Ads and Google Ads MCP server for Claude and ChatGPT
 
-Run Facebook and Instagram ads from your AI app. AdChat is a hosted, remote
+[![AdChat MCP server on Glama](https://glama.ai/mcp/connectors/app.adchat/meta-ads/badges/score.svg)](https://glama.ai/mcp/connectors/app.adchat/meta-ads)
+
+Run Facebook, Instagram and Google ads from your AI app. AdChat is a hosted, remote
 [Model Context Protocol](https://modelcontextprotocol.io) server for the Meta
-Marketing API: ask how your ads are doing in plain English, get answers from
+Marketing API and the Google Ads API: ask how your ads are doing in plain English, get answers from
 your live numbers, and (on paid plans) create, edit, pause and resume
 campaigns, ad sets and ads, with your yes before anything that spends money or goes live.
 
@@ -160,12 +162,12 @@ Agency $99/month (10 ad accounts). Current details: https://adchat.app/pricing
 ## Who uses it
 
 - [Claude and ChatGPT users](https://adchat.app/reasons/facebook-ads-in-claude-and-chatgpt)
-- [People waiting for Meta's own Ads MCP](https://adchat.app/reasons/meta-ads-mcp-alternative) ([errors explained](https://adchat.app/meta-ads-mcp-not-working))
+- [People waiting for Meta's own Ads MCP](https://adchat.app/guides/adchat-vs-meta-ads-mcp) ([errors explained](https://adchat.app/meta-ads-mcp-not-working))
 - [Freelancers and small agencies](https://adchat.app/reasons/facebook-ads-tool-for-freelancers)
 - [Online stores](https://adchat.app/reasons/facebook-ads-for-online-stores)
 - [Real estate agents](https://adchat.app/reasons/facebook-ads-for-real-estate-agents), [dentists](https://adchat.app/reasons/facebook-ads-for-dentists) and [restaurants](https://adchat.app/reasons/facebook-ads-for-restaurants)
 
-Comparing options? See [the best Meta Ads MCP servers](https://adchat.app/guides/best-meta-ads-mcp) and [AdChat vs Meta's Ads MCP](https://adchat.app/guides/adchat-vs-meta-ads-mcp).
+Comparing options? See [the best Meta Ads MCP servers](https://adchat.app/guides/meta-ads-mcp#best-meta-ads-mcp-servers-compared) and [AdChat vs Meta's Ads MCP](https://adchat.app/guides/adchat-vs-meta-ads-mcp).
 
 ## Google Ads
 
