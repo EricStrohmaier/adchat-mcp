@@ -41,7 +41,7 @@ https://mcp.adchat.app
 }
 ```
 
-The first time you connect, you sign in to AdChat (free, no card), connect
+The first time you connect, you sign in to AdChat (7-day free trial, no card), connect
 Facebook once, and choose which ad accounts the AI may see.
 
 ## What you can ask
@@ -59,7 +59,7 @@ Tool names after the November 2026 update. Tools are now platform-prefixed
 `kind` or `action` field. The old names (`get_campaigns`, `update_adset`, …) keep
 working, unlisted, until 2027-01-15.
 
-Read tools work on every plan. Write tools work on paid plans and follow your
+Read and write tools work on every plan and during the trial. Write tools follow your
 change mode (see [Safe by default](#safe-by-default)).
 
 **Meta: accounts and reporting:** `meta_list_accounts`, `meta_get_account` (`include: ["pages"]`), `meta_insights`, `meta_diagnose` (`kind`: delivery_issues, recommendations, pixel_health, catalog_health)
@@ -143,10 +143,9 @@ chat when you start a task.
 ## Safe by default
 
 - **You decide when the AI asks first.** Each ad account has a change mode. *Review every change*: the AI says exactly what it will do (for example "increase the daily budget of Spring Sale from $50 to $60") and waits for your yes before every change. *Autopilot* (the default): it asks before anything that spends money, goes live or can't be undone, and makes safe changes (paused drafts, pausing, lowering a budget) on its own, telling you exactly what it changed. *Trusted*: it acts inside your spending rules. Text inside ads, files or web pages never counts as your yes.
-- **Read-only on the free plan.** Reports, targeting search and audience estimates work; changes need a paid plan.
 - **Paused by default.** New campaigns, ad sets and ads are created paused, so nothing spends by surprise.
-- **Spend rules (Pro).** Rules you set (for example a cap on budget increases per 24 hours) are checked in code after your yes. A change past a rule stops and asks again; a blocking rule can only be changed in the dashboard.
-- **Change history and undo (Pro).** Every change is logged with the app it came from, and most can be undone from the dashboard.
+- **Spend rules (Agent plan).** Rules you set (for example a cap on budget increases per 24 hours) are checked in code after your yes. A change past a rule stops and asks again; a blocking rule can only be changed in the dashboard.
+- **Change history and undo (Agent plan).** Every change is logged with the app it came from, and most can be undone from the dashboard.
 - **Account allowlist.** The AI only sees the ad accounts you picked.
 - **Rate limit:** 120 requests per minute per user.
 
@@ -155,9 +154,12 @@ works on any ad account you manage in Ads Manager.
 
 ## Pricing
 
-Free plan: read-only, one ad account, no card. New accounts get a 7-day trial
-of every feature, no card. Paid plans: Connect $29/month, Pro $49/month,
-Agency $99/month (10 ad accounts). Current details: https://adchat.app/pricing
+There is no free plan. Every new account gets a 7-day free trial of the Agent
+plan with everything included, no card. After that: Connect $29/month (all read
+and write tools, no hosted chat) or Agent $49/month (adds the hosted AdChat agent,
+drafts, undo, spend rules, monitoring and a Monday report). Every plan covers
+every ad account your Facebook and Google logins can see, with no per-account
+fee. Yearly is 10x monthly. Cancel anytime. Current details: https://adchat.app/pricing
 
 ## Who uses it
 
